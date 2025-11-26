@@ -1,0 +1,31 @@
+{
+  "type": "record",
+  "name": "AuthResponse",
+  "namespace": "com.rensights.schema",
+  "doc": "Authentication response schema",
+  "fields": [
+    {
+      "name": "token",
+      "type": "string",
+      "doc": "JWT authentication token"
+    },
+    {
+      "name": "email",
+      "type": "string",
+      "doc": "User email"
+    },
+    {
+      "name": "firstName",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "User first name"
+    },
+    {
+      "name": "lastName",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "User last name"
+    }
+  ]
+}
+

@@ -1,0 +1,57 @@
+{
+  "type": "record",
+  "name": "DashboardStats",
+  "namespace": "com.rensights.schema",
+  "doc": "Dashboard statistics schema",
+  "fields": [
+    {
+      "name": "totalUsers",
+      "type": "long",
+      "default": 0,
+      "doc": "Total number of users"
+    },
+    {
+      "name": "activeSubscriptions",
+      "type": "long",
+      "default": 0,
+      "doc": "Number of active subscriptions"
+    },
+    {
+      "name": "totalRevenue",
+      "type": "long",
+      "default": 0,
+      "doc": "Total revenue in cents"
+    },
+    {
+      "name": "freeUsers",
+      "type": "long",
+      "default": 0,
+      "doc": "Number of free tier users"
+    },
+    {
+      "name": "premiumUsers",
+      "type": "long",
+      "default": 0,
+      "doc": "Number of premium tier users"
+    },
+    {
+      "name": "enterpriseUsers",
+      "type": "long",
+      "default": 0,
+      "doc": "Number of enterprise tier users"
+    },
+    {
+      "name": "activeUsers",
+      "type": "long",
+      "default": 0,
+      "doc": "Number of active users"
+    },
+    {
+      "name": "verifiedUsers",
+      "type": "long",
+      "default": 0,
+      "doc": "Number of verified users"
+    }
+  ]
+}
+

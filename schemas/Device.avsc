@@ -1,0 +1,48 @@
+{
+  "type": "record",
+  "name": "Device",
+  "namespace": "com.rensights.schema",
+  "doc": "Device entity schema for device tracking",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string",
+      "doc": "Device UUID"
+    },
+    {
+      "name": "userId",
+      "type": "string",
+      "doc": "User UUID who owns this device"
+    },
+    {
+      "name": "deviceFingerprint",
+      "type": "string",
+      "doc": "Device fingerprint hash"
+    },
+    {
+      "name": "userAgent",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "User agent string"
+    },
+    {
+      "name": "ipAddress",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "IP address"
+    },
+    {
+      "name": "lastUsedAt",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Last used timestamp (ISO 8601)"
+    },
+    {
+      "name": "createdAt",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Device creation timestamp (ISO 8601)"
+    }
+  ]
+}
+

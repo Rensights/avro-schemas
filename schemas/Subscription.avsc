@@ -1,0 +1,87 @@
+{
+  "type": "record",
+  "name": "Subscription",
+  "namespace": "com.rensights.schema",
+  "doc": "Subscription entity schema for Rensights platform",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string",
+      "doc": "Subscription UUID"
+    },
+    {
+      "name": "userId",
+      "type": "string",
+      "doc": "User UUID who owns this subscription"
+    },
+    {
+      "name": "userEmail",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "User email for convenience"
+    },
+    {
+      "name": "planType",
+      "type": {
+        "type": "enum",
+        "name": "PlanType",
+        "symbols": ["FREE", "PREMIUM", "ENTERPRISE"]
+      },
+      "default": "FREE",
+      "doc": "Subscription plan type"
+    },
+    {
+      "name": "status",
+      "type": {
+        "type": "enum",
+        "name": "SubscriptionStatus",
+        "symbols": ["ACTIVE", "CANCELLED", "EXPIRED"]
+      },
+      "default": "ACTIVE",
+      "doc": "Subscription status"
+    },
+    {
+      "name": "startDate",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Subscription start date (ISO 8601)"
+    },
+    {
+      "name": "endDate",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Subscription end date (ISO 8601)"
+    },
+    {
+      "name": "stripeCustomerId",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Stripe customer ID"
+    },
+    {
+      "name": "stripeSubscriptionId",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Stripe subscription ID"
+    },
+    {
+      "name": "stripePaymentMethodId",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Stripe payment method ID"
+    },
+    {
+      "name": "createdAt",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Subscription creation timestamp (ISO 8601)"
+    },
+    {
+      "name": "updatedAt",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Subscription last update timestamp (ISO 8601)"
+    }
+  ]
+}
+

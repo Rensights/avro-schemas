@@ -1,0 +1,77 @@
+{
+  "type": "record",
+  "name": "User",
+  "namespace": "com.rensights.schema",
+  "doc": "User entity schema for Rensights platform",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string",
+      "doc": "User UUID"
+    },
+    {
+      "name": "email",
+      "type": "string",
+      "doc": "User email address"
+    },
+    {
+      "name": "firstName",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "User first name"
+    },
+    {
+      "name": "lastName",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "User last name"
+    },
+    {
+      "name": "isActive",
+      "type": "boolean",
+      "default": true,
+      "doc": "Whether user account is active"
+    },
+    {
+      "name": "emailVerified",
+      "type": "boolean",
+      "default": false,
+      "doc": "Whether user email is verified"
+    },
+    {
+      "name": "userTier",
+      "type": {
+        "type": "enum",
+        "name": "UserTier",
+        "symbols": ["FREE", "PREMIUM", "ENTERPRISE"]
+      },
+      "default": "FREE",
+      "doc": "User subscription tier"
+    },
+    {
+      "name": "customerId",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Internal customer ID"
+    },
+    {
+      "name": "stripeCustomerId",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Stripe customer ID"
+    },
+    {
+      "name": "createdAt",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "User creation timestamp (ISO 8601)"
+    },
+    {
+      "name": "updatedAt",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "User last update timestamp (ISO 8601)"
+    }
+  ]
+}
+
