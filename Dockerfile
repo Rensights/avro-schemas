@@ -9,8 +9,13 @@ WORKDIR /schemas
 # Copy schema files
 COPY schemas/ ./schemas/
 
-# Validate schemas
-RUN java -jar /usr/local/bin/avro-tools.jar compile schema schemas/*.avsc /tmp/validate 2>&1 || echo "No schemas to validate"
+# Validate schemas (if any exist)
+RUN if [ -n "$(ls -A schemas/*.avsc 2>/dev/null)" ]; then \
+      java -jar /usr/local/bin/avro-tools.jar compile schema schemas/*.avsc /tmp/validate && \
+      echo "✅ All schemas validated successfully"; \
+    else \
+      echo "⚠️  No .avsc files found - skipping validation"; \
+    fi
 
 # Keep schemas accessible
 VOLUME ["/schemas"]
